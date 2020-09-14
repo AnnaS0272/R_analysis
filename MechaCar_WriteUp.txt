@@ -1,0 +1,92 @@
+After running multiple regression analysis, we can conclude the
+statistically significant predictors/coefficients for the 'mpg' dependant variable
+are the intercept, vehicle length and ground.clearance.In other words, the intercept, vehicle length and ground clearance have a significant impact on mpg. If the intercept is statistically significant, that means there are other factors not included in the model that have a significant impact. This means this model is not fully reliable at predicting mpg. R-squared is 0.7 which means that the regression model approximates real-world data points well, however not enough to be a reliable model.
+
+Call:
+lm(formula = mpg ~ vehicle.length + vehicle.weight + spoiler.angle + 
+    ground.clearance + AWD, data = MechaCar)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-19.4701  -4.4994  -0.0692   5.4433  18.5849 
+
+Coefficients:
+                   Estimate Std. Error t value Pr(>|t|)    
+(Intercept)      -1.040e+02  1.585e+01  -6.559 5.08e-08 ***
+vehicle.length    6.267e+00  6.553e-01   9.563 2.60e-12 ***
+vehicle.weight    1.245e-03  6.890e-04   1.807   0.0776 .  
+spoiler.angle     6.877e-02  6.653e-02   1.034   0.3069    
+ground.clearance  3.546e+00  5.412e-01   6.551 5.21e-08 ***
+AWD              -3.411e+00  2.535e+00  -1.346   0.1852    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 8.774 on 44 degrees of freedom
+Multiple R-squared:  0.7149,	Adjusted R-squared:  0.6825 
+F-statistic: 22.07 on 5 and 44 DF,  p-value: 5.35e-11
+
+
+===============================================================================
+When looking at overall CoilSummary, the distribution appears to be quite 
+symmetric given that mean and median are about the same. Variance tells us how 
+far each data is spread from the mean, and in the case of overall summary we can observer quite large variance. however, if we further test the data by subsets, we can see the variance largely comes from Lot3, so either the data quality needs to be revisited or we need to exclude the sub-set alltogether.
+	
+Mean
+Median
+Variance
+SD
+1
+1499.531
+1499.747
+76.23459
+8.731242
+
+
+=============================================================================
+
+after running the t-test all p values suggest there is no statistical difference
+between sample and main population
+
+==============================================================================
+In my study i would include the following metrics that would be interesting 
+to consumers:
+
+*Number of cars sold
+*Cost/MSRP
+*Fuel efficiency
+*Manual v. automatic
+*Color options
+*Interior options (seat materials, displays, audio system)
+*Engine performance, reliability
+*Servicing frequency, cost
+*Distance from the manufacturing plant
+*Warranties (engine, drive train, bumper-to-bumper)
+*Safety rating: Recalls, safety issues, crash tests
+*Dealer network/distribution
+*Brand/model depreciation
+*Financing options: Cash, loan, leasing?
+*Demographic
+
+The Null hypothesis would be that people don't care how expensive the car is as 
+long as it's value doesn't depreciate fast, its fuel efficiency is good, has
+decent warranty coverage, and servicing costs are low.
+
+The alternative hypothesis would be purchase cost of the car is the main
+contributing factor to buying decision.
+
+We need to gather a lot of current information on cars, models, colors, prices, 
+warranties, dealer networks, serving, etc. and understand how
+our competitors pricing the car and based on which factors (amongst) what I've
+proposed to select. There will be many layers to my study, like peeling the onion
+testing regressions and t.test for predicting this or that dependancy. For 
+example, does Brand/depreiciation matter when it comes cost. 
+
+Fortunately, the data we require is  publicly available, as it is often 
+advertised by competitors. This overlap 
+enables us to perform consistent analysis and run the tests, including 
+multiple regression,t.test or anova test to see which factors are the 
+predictors for customer preference.
+
+
+
+
